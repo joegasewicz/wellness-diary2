@@ -1,6 +1,6 @@
 use crate::core::exercise::Exercise;
 use crate::core::meal::Meal;
-use crate::core::Mental::Mental;
+use crate::core::mental::Mental;
 use crate::core::work::Work;
 use crate::core::sleep::Sleep;
 
