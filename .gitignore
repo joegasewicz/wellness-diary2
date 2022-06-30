@@ -3,3 +3,5 @@
 wasm_client/target
 wasm_client/dist
 wasm_client/node_modules
+api_one/target
+web_client/target
