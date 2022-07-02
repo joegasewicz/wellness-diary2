@@ -1,5 +1,5 @@
 # Wellness Diary
-Open source (MIT) project for Rheumatism sufferers
+Open source (MIT) project to track physical ailments
 
 - `web_client`
    - Install `cargo install cargo-watch` 
