@@ -1,5 +1,0 @@
-[build]
-target = "index.html"
-
-[tools]
-sass = "1.53.0"

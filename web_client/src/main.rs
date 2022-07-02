@@ -1,17 +1,10 @@
-use actix_web::{get, web, App, HttpServer, Responder, HttpResponse};
+mod routes;
+
+use actix_web::{web, App, HttpServer};
+use actix_files as fs;
 use handlebars::Handlebars;
-use serde_json::json;
 
-#[get("/")]
-async fn get_days(hb: web::Data<Handlebars<'_>>) -> HttpResponse {
-    let data = json!({
-        "day": "Monday",
-    });
-    let body = hb.render("home", &data).unwrap();
-
-    HttpResponse::Ok().body(body)
-
-}
+use routes::{home::{get_days}};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -21,13 +14,13 @@ async fn main() -> std::io::Result<()> {
 
     // Templating
     let mut handlebars = Handlebars::new();
-    handlebars
-        .register_templates_directory("hbs", "./templates")
-        .unwrap();
+    handlebars.register_templates_directory("hbs", "./templates").unwrap();
+
     let handlebars_ref = web::Data::new(handlebars);
 
     HttpServer::new(move || {
         App::new()
+            .service(fs::Files::new("/js", "static/js").show_files_listing())
             .app_data(handlebars_ref.clone())
             .service(get_days)
     })

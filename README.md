@@ -1,8 +1,9 @@
 # Wellness Diary
 Open source (MIT) project for Rheumatism sufferers
 
-- `wellness_client`
-    Rust Webassembly client  
+- `web_client`
+   - Install `cargo install cargo-watch` 
+   - Run with `cargo watch -x "run"`
 
 - `api_one`
     Rust Server - the main server

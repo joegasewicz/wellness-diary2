@@ -1,5 +1,6 @@
-use actix_web::{get, web, App, HttpServer, Responder};
-use serde_json::json;
+use actix_web::{web, App, HttpServer, Responder};
+use actix_web as fs;
+
 
 #[get("/days")]
 async fn get_days() -> impl Responder {
@@ -12,7 +13,8 @@ async fn main() -> std::io::Result<()> {
     let port = 3000;
     println!("Starting server on http://{}:{}", host, port);
     HttpServer::new(|| {
-        App::new().service(get_days)
+        App::new()
+            .service(get_days)
     })
     .bind((host, port))?
     .run()
