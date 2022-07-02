@@ -7,4 +7,3 @@ Open source (MIT) project to track physical ailments
 
 - `api_one`
     Rust Server - the main server
-K
