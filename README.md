@@ -7,6 +7,3 @@ Open source (MIT) project to track physical ailments
 
 - `api_one`
     Rust Server - the main server
-
-- `api_two`
-    Python Server for returning graph / plot data
