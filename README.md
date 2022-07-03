@@ -13,3 +13,9 @@ Install diesel's CLI
 ```bash
 cargo install diesel_cli --no-default-features --features postgres
 ```
+Run migrations
+```bash
+diesel migration run
+// check down.sql 
+diesel migration redo
+```
