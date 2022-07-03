@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  diary_postgres:
+    image: "postgres:latest"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: diary
+    volumes:
+      - ./db-data/main_db/:/var/lib/postgresql/data/
+
+volumes:
+  diary_postgres:

@@ -1,5 +1,5 @@
 # Wellness Diary
-Open source (MIT) project to track physical ailments
+Open source (GPL2) project to track physical ailments
 
 - `web_client`
    - Install `cargo install cargo-watch` 
@@ -7,3 +7,9 @@ Open source (MIT) project to track physical ailments
 
 - `api_one`
     Rust Server - the main server
+
+#### ORM
+Install diesel's CLI
+```bash
+cargo install diesel_cli --no-default-features --features postgres
+```

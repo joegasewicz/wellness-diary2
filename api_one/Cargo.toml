@@ -7,5 +7,8 @@ edition = "2021"
 
 [dependencies]
 actix-web = "4.1.0"
-handlebars = { version = "4.3.1", features = ["dir_source"] }
 serde_json = "1.0.82"
+serde = { version = "1.0", features = ["derive"] }
+chrono = "0.4.19"
+diesel = { version = "2.0.0-rc.0", features = ["postgres"] }
+dotenv = "0.15.0"

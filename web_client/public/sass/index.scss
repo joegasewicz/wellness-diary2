@@ -1,1 +1,10 @@
 @import "~bootstrap";
+// Variables
+@import "variables";
+// Mixins
+@import "mixins/hero";
+// Partials
+@import "partials/footer";
+// Pages
+@import "pages/home";
+@import "pages/diary";

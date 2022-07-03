@@ -2,13 +2,14 @@ use actix_web::{get, web, HttpResponse};
 use handlebars::Handlebars;
 use serde_json::json;
 
-#[get("/")]
-pub async fn home(hb: web::Data<Handlebars<'_>>) -> HttpResponse {
+
+#[get("/diary")]
+pub async fn diary(hb: web::Data<Handlebars<'_>>) -> HttpResponse {
     let data = json!({
-        "day": "Monday",
+
     });
-    let body = hb.render("home", &data).unwrap();
+    let body = hb.render("diary", &data).unwrap();
 
     HttpResponse::Ok().body(body)
-
 }
+

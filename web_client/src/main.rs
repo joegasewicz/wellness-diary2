@@ -4,12 +4,13 @@ use actix_web::{web, App, HttpServer};
 use actix_files as fs;
 use handlebars::Handlebars;
 
-use routes::{home::{get_days}};
+use routes::home::home;
+use routes::diary::diary;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     let host = "127.0.0.1".to_string();
-    let port = 3000;
+    let port = 3001;
     println!("Starting server on http://{}:{}", host, port);
 
     // Templating
@@ -22,7 +23,8 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .service(fs::Files::new("/js", "static/js").show_files_listing())
             .app_data(handlebars_ref.clone())
-            .service(get_days)
+            .service(home)
+            .service(diary)
     })
         .bind((host, port))?
         .run()

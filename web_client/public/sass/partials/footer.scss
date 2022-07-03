@@ -1,0 +1,9 @@
+@import "../variables";
+
+footer {
+  display: flex;
+  position: relative;
+  padding: 2rem;
+  background: $french-sky-blue;
+  align-self: end;
+}

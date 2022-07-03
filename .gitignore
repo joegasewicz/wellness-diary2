@@ -1,6 +1,9 @@
 .idea
 
+db-data
+
 api_one/target
+api_one/.env
 
 web_client/target
 web_client/node_modules
